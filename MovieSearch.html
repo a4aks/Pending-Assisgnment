@@ -89,6 +89,12 @@
            genre.textContent = "Genre:"+ response.Genre + " , "+ "Language: "+ response.Language;
            const rating = document.createElement("h5");
            rating.textContent = "Rating:" + response.Ratings[0].Value + "   "+"ImDb Rating:" + response.imdbRating;
+           if(response.Ratings[0].Value > 8){
+               console.log("added")
+               const h2 = document.createElement("h2");
+               h2.textContent = "Recommended";
+               right.append(h2);
+           }
            right.append(director,writer, actor,genre,rating)
            container.append(div, right)
            
